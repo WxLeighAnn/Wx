@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Arrggh! ECU Wx</title>
+    
+  <!-- Meta data for WxStem -->
+<meta name="WeatherSTEM-api-key" content="xev4rwrq">
+<meta name="WeatherSTEM-station" content="pitt-nc/ecu">
+
+<!-- JavaScript -->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="//static.weatherstem.com/api.min.js"></script>
+
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Current Pirate Conditions</h1>
+        <p class="header"></p>
+	
+<!-- HTML snippet (data-sensor attribute can be the name of any installed sensor) -->
+<div>
+  <div> Temperature: <span data-sensor="Thermometer"></span> °F </div>
+  <div> Heat Index: <span data-sensor="Heat Index"></span> °F </div>
+  <div> Winds: <span data-sensor="Anemometer"></span> mph </div>
+  <div> Pressure: <span data-sensor="Barometer"></span> inHg;  <span data-sensor="Barometer Tendency"></span> </div>
+</div> 
+
+
+      </header>
+      <section>
+      
+  <head>
+		<title>JSONP Example</title>
+		
+		<!-- input param is a URI escaped JSON string -->
+		<script src="//pitt-nc.weatherstem.com/api?input=%7B%22stations%22%3A%5B%22ecu%22%5D%2C%22api_key%22%3A%22xev4rwrq%22%7D&callback=myCallback"></script>
+		<script>
+			function myCallback(data) {
+				var objString = unescape(data);
+				alert(objString);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+        <h3>
+     
+ <p>Pirate Cloud Cam</p>
+<img src="https://pitt-nc.weatherstem.com/skycamera/pitt-nc/ecu/cumulus/snapshot.jpg" class="img-responsive" alt="">
+     </section>
+     
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
